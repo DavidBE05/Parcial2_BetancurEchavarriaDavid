@@ -1,4 +1,3 @@
-﻿using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
 namespace Parcial2_BetancurEchavarriaDavid.DAL.Entities
