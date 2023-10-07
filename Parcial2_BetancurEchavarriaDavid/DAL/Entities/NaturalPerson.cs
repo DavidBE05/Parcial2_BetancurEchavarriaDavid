@@ -5,13 +5,14 @@ namespace Parcial2_BetancurEchavarriaDavid.DAL.Entities
 {
     public class NaturalPerson : Entity
     {
-        [Display(FullName = "Pais")]
+       
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         public string FullName { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido.")]
-        public int Email { get; set; }
+        public string Email { get; set; }
 
+        [MaxLength(4, ErrorMessage = "El campo {0} debe tener el maximo {1} caracteres.")]
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         public int BirthYear { get; set; }
 
