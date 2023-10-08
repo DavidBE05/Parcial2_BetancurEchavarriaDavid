@@ -162,7 +162,7 @@ namespace Parcial2_BetancurEchavarriaDavid.Controllers
         {
             if (string.IsNullOrWhiteSpace(searchString) || _context.NaturalPeople == null)
             {
-                return View(new List<Parcial2_BetancurEchavarriaDavid.DAL.Entities.NaturalPerson>());
+               return View(new List<Parcial2_BetancurEchavarriaDavid.DAL.Entities.NaturalPerson>());
             }
 
             searchString = searchString.ToLower();
