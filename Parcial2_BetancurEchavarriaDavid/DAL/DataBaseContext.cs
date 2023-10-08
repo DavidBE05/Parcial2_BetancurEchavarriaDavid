@@ -6,7 +6,7 @@ namespace Parcial2_BetancurEchavarriaDavid.DAL
 {
     public class DataBaseContext : DbContext
     {
-        public DataBaseContext(DbContextOptions<DataBaseContext>options):base(options)
+        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {
 
         }

@@ -1,0 +1,48 @@
+﻿@model List<Parcial2_BetancurEchavarriaDavid.DAL.Entities.NaturalPerson>
+
+@{
+    ViewData["Title"] = "Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search Results</h2>
+
+@using (Html.BeginForm("Search", "NaturalPersons", FormMethod.Get))
+{
+    <p>
+        <input type="text" name="searchString" placeholder="Search by name or email" value="@ViewBag.SearchString" />
+        <input type="submit" value="Search" class="btn btn-primary" /> <!-- Este es el botón de búsqueda -->
+    </p>
+}
+
+@if (Model != null && Model.Any())
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Birth Year</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var person in Model)
+            {
+                        <tr>
+                            <td>@person.FullName</td>
+                            <td>@person.Email</td>
+                            <td>@person.BirthYear.ToShortDateString()</td>
+                            <td>@person.Age</td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+}
+else
+{
+        <p>No results found.</p>
+}
+
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

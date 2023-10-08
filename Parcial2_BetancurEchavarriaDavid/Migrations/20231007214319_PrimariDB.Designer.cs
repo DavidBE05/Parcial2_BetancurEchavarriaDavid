@@ -12,8 +12,8 @@ using Parcial2_BetancurEchavarriaDavid.DAL;
 namespace Parcial2_BetancurEchavarriaDavid.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20231007192219_InitialDb")]
-    partial class InitialDb
+    [Migration("20231007214319_PrimariDB")]
+    partial class PrimariDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,9 +33,8 @@ namespace Parcial2_BetancurEchavarriaDavid.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("BirthYear")
-                        .HasMaxLength(4)
-                        .HasColumnType("int");
+                    b.Property<DateTime>("BirthYear")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");

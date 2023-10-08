@@ -31,9 +31,8 @@ namespace Parcial2_BetancurEchavarriaDavid.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("BirthYear")
-                        .HasMaxLength(4)
-                        .HasColumnType("int");
+                    b.Property<DateTime>("BirthYear")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
