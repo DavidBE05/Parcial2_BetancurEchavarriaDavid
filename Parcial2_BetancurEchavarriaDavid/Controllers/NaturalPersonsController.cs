@@ -178,20 +178,5 @@ namespace Parcial2_BetancurEchavarriaDavid.Controllers
         {
             return (_context.NaturalPeople?.Any(e => e.Id == id)).GetValueOrDefault();
         }
-
-        private int CalculateAge(DateTime birthYear)
-        {
-            DateTime currentDate = DateTime.Now;
-            int age = currentDate.Year - birthYear.Year;
-
-            // Verificar si aún no ha cumplido años en este año
-            if (birthYear.Date > currentDate.AddYears(-age))
-            {
-                age--;
-            }
-
-            return age;
-        }
     }
 }
-

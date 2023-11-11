@@ -1,23 +1,44 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+using System.Reflection.Metadata.Ecma335;
+
 
 namespace Parcial2_BetancurEchavarriaDavid.DAL.Entities
 {
-    public class NaturalPerson : Entity
-    {
 
-        [Required(ErrorMessage = "El campo {0} es requerido.")]
-        public string FullName { get; set; }
+     public class NaturalPerson : Entity
+      {
 
-        [Required(ErrorMessage = "El campo {0} es requerido.")]
-        public string Email { get; set; }
+            #region Properties
+
+            [Display(Name = "Documento de entidad")]
+            [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
+            [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+            public string ID { get; set; }
 
 
-        [Required(ErrorMessage = "El campo {0} es requerido.")]
-        public int BirthYear { get; set; }
+            [Display(Name = "Nombre Completo")]
+            [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
+            [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+            public string FullName { get; set; }
 
-        [Required(ErrorMessage = "El campo {0} es requerido.")]
-        public int Age { get; set; }
 
-    }
+            [Display(Name = "Correo")]
+            [MaxLength(50)]
+            [Required(ErrorMessage = "El campo {0} es obligatorio")]
+            [DataType(DataType.EmailAddress)]
+            public string Email { get; set; }
+
+            [Display(Name = "Año de Nacimiento")]
+            [Required(ErrorMessage = "El campo {0} es obligatorio")]
+            public int BirthYear { get; set; }
+
+            [Display(Name = "Edad")]
+            public int Age { get; set; }
+
+
+            #endregion
+      }
+    
 }

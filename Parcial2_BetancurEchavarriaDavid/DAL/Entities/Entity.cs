@@ -5,7 +5,7 @@ namespace Parcial2_BetancurEchavarriaDavid.DAL.Entities
 {
     public class Entity
     {
-        [Required]
+        [Key]
         public Guid Id { get; set; }
 
         [Display(Name = "Fecha de creación")]
